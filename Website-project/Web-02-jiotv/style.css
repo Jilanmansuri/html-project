@@ -96,11 +96,6 @@ body {
 }
 
 /* right side: search + profile */
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
 
 /* search wrapper */
 .search-wrap {
@@ -174,6 +169,8 @@ body {
     flex-direction: column;
     gap: 1.4rem;
     padding: 1.6rem 2vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* HERO track */
@@ -205,7 +202,7 @@ body {
 .hero-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit:100%;
     display: block;
 }
 
@@ -361,26 +358,35 @@ body {
         width: 20rem;
     }
 
-     .hello{
+    .hello {
         display: none;
     }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
 }
 
 /* between 577px and 768px */
 @media (min-width: 577px) and (max-width: 768px) {
     .nav-inner {
-        width: 94%;
+        width: 100vw;
     }
-    .hello{
+
+    .hello {
         display: none;
     }
 
+
     .logo {
-        height: 2.4rem;
+        height: 2rem;
     }
 
     .menu-link {
-        font-size: 0.98rem;
+        font-size: 0.5rem;
     }
 
     .search-input {
@@ -393,13 +399,39 @@ body {
         height: 36vh;
     }
 
-    .card {
-        width: 15rem;
+    .nav-right {
+        display: none;
+
     }
 
-    .card img {
-        height: 10rem;
+
+
+       .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
     }
+
+
+    .logo {
+        height: 2rem;
+        margin-left: 0;
+    }
+
+    .search-wrap {
+        padding: 0.15rem;
+        border-radius: 2rem;
+        display: none;
+    }
+
+    .hero-item {
+        min-width: 90vw;
+        height: 28vh;
+    }
+
+
+
+    /* ******************------------ */
 
 
 }
@@ -420,16 +452,17 @@ body {
         display: none;
     }
 
-    .hello{
+    .hello {
         display: flex;
         background-color: #aa0023;
-      
-        gap:0.5em;
+
+        gap: 0.5em;
         justify-content: center;
 
     }
-    .hello a{
-        font-size: 0.7em;
+
+    .hello a {
+        font-size: 0.6em;
     }
 
     /* compact: hide input on very small screens */
@@ -460,7 +493,11 @@ body {
         font-size: 1rem;
     }
 
-
+       .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
 }
 
 
@@ -562,6 +599,10 @@ body {
         justify-content: center;
         gap: 30px;
     }
+
+    .footer {
+        width: 80vw;
+    }
 }
 
 @media (max-width: 576px) {
@@ -583,4 +624,13 @@ body {
         display: flex;
         flex-wrap: wrap;
     }
+}
+
+
+@media (min-width: 768px) and (max-width: 1200px){
+
+    .nav-right{
+        display: none;
+    }
+
 }

@@ -2,21 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JioTV Sports</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JioTV Kids Section</title>
     <style>
-        /* 🔹 Base */
-        * {
-            box-sizing: border-box;
-        }
-
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #111;
+            background: #fff;
+            color: #222;
         }
+
 
         .navbar {
             width: 100%;
@@ -166,7 +162,7 @@
 
         h2 {
             margin: 0;
-            
+
         }
 
         a {
@@ -174,179 +170,95 @@
             color: #c2002f;
         }
 
-        /* 🔹 Hero Banner */
-        .hero-section {
-            width: 100%;
+        .kids-container {
             padding: 20px;
-            background: #fff;
+            width: 80vw;
+            margin: auto;
         }
 
-        .hero-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
+        .kids-section {
+            margin-bottom: 40px;
         }
 
-        .hero-container img {
-            width: 32%;
-            height: 40vh;
-            border-radius: 15px;
-            object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .hero-container img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        /* 🔹 Content Section */
-        .content-section,
-        .sports-section {
-            padding: 20px 30px;
-            background: #fff;
+        .kids-section h2 {
+            font-size: 1.5rem;
             margin-bottom: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            color: #d1001f;
         }
 
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-
-        .section-header h2 {
-            font-size: 30px;
-            font-weight: 900;
-            color: #111;
-        }
-
-        .see-all {
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        /* 🔹 Horizontal scroll rows */
-        .scroll-row,
-        .sports-row {
+        /* Horizontal scroll row */
+        .scroll-row {
             display: flex;
             gap: 15px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding-bottom: 10px;
-        }
+            flex-wrap: nowrap;
 
-        .scroll-row::-webkit-scrollbar,
-        .sports-row::-webkit-scrollbar {
-            height: 0px;
-        }
-
-        .scroll-row img {
-            width: 260px;
-            height: 350px;
-            border-radius: 15px;
-            object-fit: cover;
-            flex-shrink: 0;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .scroll-row img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .scroll-row.large img {
-            width: 340px;
-            height: 200px;
-        }
-
-        /* 🔹 Sports Section (Round Logos) */
-        .sports-row img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background: #fff;
-            object-fit: contain;
-            padding: 10px;
-            flex-shrink: 0;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .sports-row img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        /* 🔹 Responsive Design */
-        @media (min-width: 768px) {
-
+            overflow-x: scroll;
             
-            .hero-container img {
-                width: 32%;
-            }
+            scroll-behavior: smooth;
 
-            .nav-inner {
-                width: 86%;
-            }
-
-            .logo {
-                height: 2.6rem;
-            }
-
-            .menu-link {
-                font-size: 1rem;
-            }
-
-            .search-input {
-                width: 18vw;
-                min-width: 14rem;
-            }
-
-            .hello {
-                display: none;
-            }
         }
 
-        @media (min-width: 577px) and (max-width: 768px) {
-            .nav-inner {
-                width: 94%;
-            }
-
-            .hello {
-                display: none;
-            }
-
-            .logo {
-                height: 2.4rem;
-            }
-
-            .menu-link {
-                font-size: 0.98rem;
-            }
-
-            .search-input {
-                width: 26vw;
-                min-width: 10rem;
-            }
-
-
-            .hero-container img {
-                width: 48%;
-            }
-
-            .scroll-row img {
-                width: 200px;
-                height: 120px;
-            }
+        .scroll-row::-webkit-scrollbar {
+            height: 6px;
         }
 
+        .scroll-row::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+
+        .scroll-row::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        .scroll-row::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .card {
+            background: #f7f7f7;
+            border-radius: 10px;
+
+            width: 330px;
+            height: 180px;
+
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+
+
+
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 330px;
+            height: 180px;
+            border-radius: 10px;
+            display: block;
+        }
+
+
+
+        /* ===== Responsive Breakpoints ===== */
+
+        /* Mobile (max 576px): 2 per row */
         @media (max-width: 576px) {
+            .card {
+                flex: 0 0 45%;
+            }
+
+            .kids-section h2 {
+                font-size: 1.1rem;
+                text-align: center;
+            }
+
+            .card p {
+                font-size: 0.85rem;
+            }
 
             .nav-inner {
                 width: 98%;
@@ -372,7 +284,7 @@
             }
 
             .hello a {
-                font-size: 0.7em;
+                font-size: 0.6em;
             }
 
             /* compact: hide input on very small screens */
@@ -385,28 +297,66 @@
                 padding: 0.15rem;
                 border-radius: 2rem;
             }
-
-            .hero-container img {
-                width: 100%;
-            }
-
-            .scroll-row img {
-                width: 180px;
-                height: 110px;
-            }
-
-            .scroll-row.large img {
-                width: 260px;
-                height: 160px;
-            }
-
-            .sports-row img {
-                width: 80px;
-                height: 80px;
-            }
         }
 
+        /* Tablet (577px–768px): 3 per row */
+        @media (min-width: 577px) and (max-width: 768px) {
+            .card {
+                flex: 0 0 30%;
+            }
 
+            .kids-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .nav-inner {
+                width: 94%;
+            }
+
+            .hello {
+                display: none;
+            }
+
+            .logo {
+                height: 2.4rem;
+            }
+
+            .menu-link {
+                font-size: 0.98rem;
+            }
+
+            .search-input {
+                width: 26vw;
+                min-width: 10rem;
+            }
+
+        }
+
+        /* Desktop (min 768px): 5 per row */
+        @media (min-width: 768px) {
+
+
+            .nav-inner {
+                width: 86%;
+            }
+
+            .logo {
+                height: 2.6rem;
+            }
+
+            .menu-link {
+                font-size: 1rem;
+            }
+
+            .search-input {
+                width: 18vw;
+                min-width: 14rem;
+            }
+
+            .hello {
+                display: none;
+            }
+        }
 
 
         .footer {
@@ -528,6 +478,14 @@
                 flex-wrap: wrap;
             }
         }
+
+        @media (min-width: 768px) and (max-width: 1200px) {
+
+            .nav-right {
+                display: none;
+            }
+
+        }
     </style>
 </head>
 
@@ -547,9 +505,9 @@
                     <a class="menu-link" href="index.html">TV Guide</a>
                     <a class="menu-link" href="#">Premium</a>
                     <a class="menu-link" href="#">Movies</a>
-                    <a class="menu-link active" href="sports.html">Sports</a>
+                    <a class="menu-link " href="sports.html">Sports</a>
                     <a class="menu-link" href="#">Specials</a>
-                    <a class="menu-link" href="kidz.html">Kids</a>
+                    <a class="menu-link active" href="kidz.html">Kids</a>
                     <a class="menu-link" href="#">News</a>
                     <a class="menu-link" href="#">Shows</a>
                 </nav>
@@ -580,122 +538,161 @@
     </header>
     <div>
         <nav class="main-menu hello">
-            <a class="menu-link active" href="index.html">For You</a>
+            <a class="menu-link " href="index.html">For You</a>
             <a class="menu-link" href="index.html">TV Guide</a>
             <a class="menu-link" href="#">Premium</a>
             <a class="menu-link" href="#">Movies</a>
             <a class="menu-link" href="sports.html">Sports</a>
             <a class="menu-link" href="#">Specials</a>
-            <a class="menu-link" href="kidz.html">Kids</a>
+            <a class="menu-link active" href="kidz.html">Kids</a>
             <a class="menu-link" href="#">News</a>
             <a class="menu-link" href="#">Shows</a>
         </nav>
     </div>
-    <!-- 🔹 HERO BANNER SECTION -->
-    <section class="hero-section">
-        <div class="hero-container">
-            <img src="https://jiotvimages.cdn.jio.com/dare_images/shows/channel/2aa8859883d95801441d4589a472ef0c.png?width=900&optimize=low&format=webp"
-                alt="Asia Cup Final" />
-            <img src="https://jiotvimages.cdn.jio.com/dare_images/shows/channel/e3b71590a73411f0ab84058d3b84f81b_1760250604905_l_medium.jpg?width=900&optimize=low&format=webp"
-                alt="India vs Pakistan" />
-            <img src="https://jiotvimages.cdn.jio.com/dare_images/shows/channel/bf365ce0a9ae11f09b4f5d374ee9a56d_1760522844590_l_medium.jpg?width=900&optimize=low&format=webp" alt="Asia Cricket Celebration" />
-        </div>
-    </section>
 
-    <!-- 🔹 ASIA CRICKET FINAL HIGHLIGHTS -->
-    <section class="content-section">
-        <div class="section-header">
-            <h2>Asia Cricket Final Highlights</h2>
-            <a href="#" class="see-all">See All</a>
-        </div>
-        <div class="scroll-row">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/b4d41c25e80b4ba1abc37e5513eeed6d.jpg?width=216&optimize=low&format=webp"
-                alt="Final 1">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/ba7d5eb65bcdf3c1bfe5a2ef3e9ed127.jpg?width=216&optimize=low&format=webp"
-                alt="Final 2">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/a87c28532b99ece962efcd47fce86abd.jpg?width=216&optimize=low&format=webp" alt="Final 3">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/5d6ef848e9f923ed1a4bb8e1dd43eb75.jpg?width=216&optimize=low&format=webp" alt="Final 4">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/9b3ab29cdc812345373bc4b507934ab7.jpg?width=216&optimize=low&format=webp" alt="Final 5">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/75bd3f801fd707effe98a19e03c0817c.jpg?width=216&optimize=low&format=webp" alt="Final 5">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/75bd3f801fd707effe98a19e03c0817c.jpg?width=216&optimize=low&format=webp" alt="Final 5">
-        </div>
-    </section>
+    <main class="kids-container">
 
-    <!-- 🔹 ASIA CRICKET SUPER FOUR -->
-    <section class="content-section">
-        <div class="section-header">
-            <h2>Asia Cricket Super Four Highlights</h2>
-            <a href="#" class="see-all">See All</a>
-        </div>
-        <div class="scroll-row">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/e356bbf8e8452a45f68bb1af0f04ec47.jpg?width=216&optimize=low&format=webp" alt="Super 1">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/5c2ee7c8510fa3bbf9a179a1ef533aa3.jpg?width=216&optimize=low&format=webp"
-                alt="Super 2">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/b7497f291181c70ed1da9dc6f9ba6403.jpg?width=216&optimize=low&format=webp"
-                alt="Super 3">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/dcc22433b9367f51fbb06314ce88b34c.jpg?width=216&optimize=low&format=webp" alt="Super 4">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/a603c2ba2d01e9b3bb68b5eff5402d2a.jpg?width=216&optimize=low&format=webp" alt="Super 5">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/fc22768e58ba56101b63164aad415ee8.jpg?width=216&optimize=low&format=webp" alt="Super 5">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/fc22768e58ba56101b63164aad415ee8.jpg?width=216&optimize=low&format=webp" alt="Super 5">
-        </div>
-    </section>
+        <!-- Discovery Kids -->
+        <section class="kids-section">
+            <h2>Discovery Kids</h2>
+            <div class="kids-row scroll-row">
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554082.jpg?width=700"
+                        alt="">
 
-    <!-- 🔹 ACC ASIA CRICKET 2025 -->
-    <section class="content-section">
-        <div class="section-header">
-            <h2>ACC Asia Cricket 2025 Highlights</h2>
-            <a href="#" class="see-all">See All</a>
-        </div>
-        <div class="scroll-row">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/7e7b4a3cd290f78303da766d2805ac48.jpg?width=216&optimize=low&format=webp"
-                alt="ACC 1">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/4b6d3628d85bd1596917290266d51a69.jpg?width=216&optimize=low&format=webp"
-                alt="ACC 2">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/4ec25c6bec7f721a070dc4b085a424ee.jpg?width=216&optimize=low&format=webp"
-                alt="ACC 3">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/1d152daf267e3b825191ea228357151a.jpg?width=216&optimize=low&format=webp" alt="ACC 4">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/756dd3c57fad4e21377c617b187c5dd2.jpg?width=216&optimize=low&format=webp"
-                alt="ACC 5">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/0a18bb87530d135b4d23968e6dfe85e8.jpg?width=216&optimize=low&format=webp"
-                alt="ACC 5">
-            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/0a18bb87530d135b4d23968e6dfe85e8.jpg?width=216&optimize=low&format=webp"
-                alt="ACC 5">
-        </div>
-    </section>
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-27/251027554023.jpg?width=700"
+                        alt="">
 
-    <!-- 🔹 SUPER SPORTS -->
-    <section class="sports-section">
-        <div class="section-header">
-            <h2>Super Sports</h2>
-            <a href="#" class="see-all">See All</a>
-        </div>
-        <div class="sports-row">
-            <img src="https://jiotvimages.cdn.jio.com/dare_images/images/channel/f1b6e0d86a1b64ac1c423b1ffe319483.png?width=400&optimize=low&format=webp" alt="Star Sports">
-            <img src="https://jiotvimages.cdn.jio.com/dare_images/images/channel/3cb0f86e0362eca4d56e489cb48bc7d6.png?width=400&optimize=low&format=webp"
-                alt="Sony Sports">
-            <img src="https://jiotvimages.cdn.jio.com/dare_images/images/channel/987e600ce8221055040b25d6089e1fa8.png?width=400&optimize=low&format=webp" alt="SuperSport">
-            <img src="https://jiotvimages.cdn.jio.com/dare_images/images/channel/829e30ca1caf418ef21bc58f76ba7a1c.png?width=400&optimize=low&format=webp" alt="Eurosport">
-            <img src="https://jiotvimages.cdn.jio.com/dare_images/images/channel/47da9865e89214dc78e073a2a00446cb.png?width=400&optimize=low&format=webp" alt="ESPN">
-            <img src="https://jiotvimages.cdn.jio.com/dare_images/images/channel/51aafced6f7dbe6d3b0b316237051393.png?width=400&optimize=low&format=webp" alt="Cricket AU">
-            <img src="https://jiotvimages.cdn.jio.com/dare_images/images/channel/51aafced6f7dbe6d3b0b316237051393.png?width=400&optimize=low&format=webp" alt="Cricket AU">
-        </div>
-    </section>
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554084.jpg?width=700"
+                        alt="">
 
-    <!-- 🔹 MI TV VIDEOS -->
-    <section class="content-section">
-        <div class="section-header">
-            <h2>MI TV Videos</h2>
-            <a href="#" class="see-all">See All</a>
-        </div>
-        <div class="scroll-row large">
-            <img src="https://jiotvimages.cdn.jio.com/dare_images/shows/category/26f08b101aa111efb942cb29b01737fc_1716646491713.jpg?width=700&optimize=low&format=webp"
-                alt="MI Video 1">
-            <img src="https://jiotvimages.cdn.jio.com/dare_images/shows/category/6b1f44101aa211efbe8403a420c17a67_1716647035601.jpg?width=700&optimize=low&format=webp"
-                alt="MI Video 2">
-            <img src="https://jiotvimages.cdn.jio.com/dare_images/shows/category/28562d301aaf11efa1f58f6cfbc61fd7_1716652507011.jpg?width=700&optimize=low&format=webp" alt="MI Video 3">
-        </div>
-    </section>
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554035.jpg?width=700"
+                        alt="">
 
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554027.jpg?width=700"
+                        alt="">
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Munchkin Media -->
+        <section class="kids-section">
+            <h2>Munchkin Media</h2>
+            <div class="kids-row scroll-row">
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-27/251027554023.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554082.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554084.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554035.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554027.jpg?width=700"
+                        alt="">
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Kids Regional Channels -->
+        <section class="kids-section">
+            <h2>Kids Regional Channels</h2>
+            <div class="kids-row scroll-row">
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554084.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554082.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-27/251027554023.jpg?width=700"
+                        alt="">
+
+                </div>
+                
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554035.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554027.jpg?width=700"
+                        alt="">
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Nick Channels -->
+        <section class="kids-section">
+            <h2>Popular Nick Channels</h2>
+            <div class="kids-row scroll-row">
+
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554035.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554082.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-27/251027554023.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554084.jpg?width=700"
+                        alt="">
+
+                </div>
+                
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554027.jpg?width=700"
+                        alt="">
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Power Kids -->
+        <section class="kids-section">
+            <h2>Power Kids</h2>
+            <div class="kids-row scroll-row">
+
+
+            </div>
+        </section>
+
+    </main>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-column">
@@ -780,6 +777,7 @@
             <p>© 2025 Reliance JioTV. All rights reserved.</p>
         </div>
     </footer>
+
 
 </body>
 
