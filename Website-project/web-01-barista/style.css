@@ -73,6 +73,7 @@ body::-webkit-scrollbar:horizontal {
     .shop2 {
         flex-direction: column;
         gap: 1em;
+         display: flex;
     }
 
     .box {
@@ -136,7 +137,7 @@ body::-webkit-scrollbar:horizontal {
 }
 
 /* ------------------------------------  Small mobile screens  ----------------------------------------*/
-@media (max-width: 480px) {
+@media (max-width: 700px) {
 
     * {
         margin: 0;
@@ -326,7 +327,10 @@ body::-webkit-scrollbar:horizontal {
         padding: 1em;
     }
 
-
+.shop2{
+     display: grid;
+     grid-template-columns: repeat(2,1fr);
+}
 
     .navbar {
         display: flex;
@@ -549,8 +553,9 @@ button:hover{
 
 .shop2 {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+   
+   
+   
     gap: 1em;
     justify-content: center;
 }
